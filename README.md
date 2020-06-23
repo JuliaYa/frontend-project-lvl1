@@ -1,0 +1,1 @@
+This is the first project on Hexlet. Brain Games. Frontend JS.
