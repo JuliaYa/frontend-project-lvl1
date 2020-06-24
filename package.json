@@ -2,10 +2,11 @@
   "name": "hexlet_js_proj1",
   "version": "1.0.0",
   "description": "First project on Hexlet. JS. Brain Games.",
+  "type": "module",
   "main": "bin/brain-games.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }, 
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JuliaYa/frontend-project-lvl1.git"
