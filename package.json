@@ -4,6 +4,9 @@
   "description": "First project on Hexlet. JS. Brain Games.",
   "type": "module",
   "main": "bin/brain-games.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
