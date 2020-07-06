@@ -8,4 +8,9 @@ const askNameAndGreet = () => {
   console.log(`Hello, ${name}!`);
 };
 
-export { askNameAndGreet };
+function rand(maxLimit = 100) {
+  let rand = Math.random() * maxLimit;
+  return Math.floor(rand);
+ }
+
+export { askNameAndGreet, rand };
