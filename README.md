@@ -11,3 +11,9 @@ This is the first project on Hexlet.
 ## See Instructions
 
 [![asciicast](https://asciinema.org/a/Wqc6zwzlt8KizNZkZ8gQKWqok.svg)](https://asciinema.org/a/Wqc6zwzlt8KizNZkZ8gQKWqok)
+
+# Brain Calc
+
+## See Instructions
+
+[![asciicast](https://asciinema.org/a/2XCRLm96YBX6CYNuIpGdGvaKb.svg)](https://asciinema.org/a/2XCRLm96YBX6CYNuIpGdGvaKb)
