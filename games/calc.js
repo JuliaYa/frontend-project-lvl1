@@ -1,14 +1,37 @@
 import { rand, startGame } from '../src/index.js';
 
 export default () => {
+  const getExprResult = (expr) => {
+    const [num1, operator, num2] = expr.split(' ');
+    let result = 0;
+
+    switch (operator) {
+      case '+':
+        result = parseInt(num1, 10) + parseInt(num2, 10);
+        break;
+      case '-':
+        result = parseInt(num1, 10) - parseInt(num2, 10);
+        break;
+      case '*':
+        result = parseInt(num1, 10) * parseInt(num2, 10);
+        break;
+      case '/':
+        result = parseInt(num1, 10) / parseInt(num2, 10);
+        break;
+      default:
+        result = null;
+        break;
+    }
+    return result;
+  };
+
   const q1 = `${rand(100)} + ${rand(100)}`;
   const q2 = `${rand(100)} - ${rand(100)}`;
   const q3 = `${rand(100)} * ${rand(100)}`;
 
-  // TODO: remove eval and choose operator randomly
-  const a1 = eval(q1).toString();
-  const a2 = eval(q2).toString();
-  const a3 = eval(q3).toString();
+  const a1 = getExprResult(q1).toString();
+  const a2 = getExprResult(q2).toString();
+  const a3 = getExprResult(q3).toString();
 
   const gameParams = {
     description: 'What is the result of the expression?',
