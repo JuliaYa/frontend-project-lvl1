@@ -17,3 +17,9 @@ This is the first project on Hexlet.
 ## See Instructions
 
 [![asciicast](https://asciinema.org/a/2XCRLm96YBX6CYNuIpGdGvaKb.svg)](https://asciinema.org/a/2XCRLm96YBX6CYNuIpGdGvaKb)
+
+# Brain GCD
+
+## See Instructions
+
+[![asciicast](https://asciinema.org/a/dz5dlZqFBwqf5g11EicdcBpBN.svg)](https://asciinema.org/a/dz5dlZqFBwqf5g11EicdcBpBN)
