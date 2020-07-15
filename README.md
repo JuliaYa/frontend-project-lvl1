@@ -23,3 +23,9 @@ This is the first project on Hexlet.
 ## See Instructions
 
 [![asciicast](https://asciinema.org/a/dz5dlZqFBwqf5g11EicdcBpBN.svg)](https://asciinema.org/a/dz5dlZqFBwqf5g11EicdcBpBN)
+
+# Brain Progression
+
+## See Instructions
+
+[![asciicast](https://asciinema.org/a/Agfu1nINKIZjvoi4ZZooXspaR.svg)](https://asciinema.org/a/Agfu1nINKIZjvoi4ZZooXspaR)
