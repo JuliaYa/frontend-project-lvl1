@@ -29,3 +29,9 @@ This is the first project on Hexlet.
 ## See Instructions
 
 [![asciicast](https://asciinema.org/a/Agfu1nINKIZjvoi4ZZooXspaR.svg)](https://asciinema.org/a/Agfu1nINKIZjvoi4ZZooXspaR)
+
+# Brain Prime
+
+## See Instrucrions
+
+[![asciicast](https://asciinema.org/a/U5aWMXGcAuTaR6XICwJfODKXR.svg)](https://asciinema.org/a/U5aWMXGcAuTaR6XICwJfODKXR)
