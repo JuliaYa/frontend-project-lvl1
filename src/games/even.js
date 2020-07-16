@@ -1,4 +1,4 @@
-import { rand, startGame } from '../src/index.js';
+import { rand, startGame } from '../index.js';
 
 export default () => {
   const q1 = rand(100);

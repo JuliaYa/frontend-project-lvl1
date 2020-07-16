@@ -1,4 +1,4 @@
-import { rand, startGame } from '../src/index.js';
+import { rand, startGame } from '../index.js';
 
 const findGCD = ([num1, num2]) => {
   let temp;

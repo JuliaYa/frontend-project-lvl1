@@ -1,4 +1,4 @@
-import { rand, startGame } from '../src/index.js';
+import { rand, startGame } from '../index.js';
 
 // FIXME: one function for question and answer
 const getProgression = (start, interval, count = 10) => {
