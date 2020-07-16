@@ -1,7 +1,7 @@
 import { rand, startGame } from '../src/index.js';
 
 export default () => {
-  const getExprResult = (expr) => {
+  const getExprResult = (expr) => { // FIXME: one function for question and answer
     const [num1, operator, num2] = expr.split(' ');
     let result = 0;
 

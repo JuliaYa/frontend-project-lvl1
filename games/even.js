@@ -5,6 +5,7 @@ export default () => {
   const q2 = rand(100);
   const q3 = rand(100);
 
+  // FIXME: remove repeated code
   const a1 = q1 % 2 === 0 ? 'yes' : 'no';
   const a2 = q2 % 2 === 0 ? 'yes' : 'no';
   const a3 = q3 % 2 === 0 ? 'yes' : 'no';
