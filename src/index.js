@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 
 const rand = (maxLimit = 100) => {
@@ -14,30 +15,24 @@ const startGame = (params) => {
 
   console.log(params.description);
 
-  let counter = 0;
-  let exit = false;
+  const { challenges } = params;
 
-  const { questions, answers } = params;
+  // eslint-disable-next-line prefer-const
+  for (let challenge of challenges) {
+    const [question, answer] = challenge;
 
-  while (!exit) {
-    console.log(`Question: ${questions[counter]}`);
+    console.log(`Question: ${question}`);
 
-    const answer = readlineSync.question('Your answer: ');
-    const trueAnswer = answers[counter];
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer.toLocaleLowerCase() === trueAnswer) {
-      console.log('Correct!');
-      counter += 1;
-      exit = counter === 3;// fixme
-    } else {
-      exit = true;
-
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${trueAnswer}".`);
+    if (userAnswer !== answer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${name}!`);
-
-      return;
+      break;
     }
+    console.log('Correct!');
   }
+
   console.log(`Congratulations, ${name}!`);
 };
 
