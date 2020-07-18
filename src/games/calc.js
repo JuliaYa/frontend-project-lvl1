@@ -1,42 +1,45 @@
 import { rand, startGame } from '../index.js';
 
 export default () => {
-  const getExprResult = (expr) => { // FIXME: one function for question and answer
-    const [num1, operator, num2] = expr.split(' ');
+  const getRandomOperator = () => {
+    const operators = ['+', '-', '*', '/'];
+
+    return operators[Math.floor(Math.random() * operators.length)];
+  };
+
+  const getChallenge = () => {
+    const operand1 = rand(100);
+    const operand2 = rand(100);
+    const operator = getRandomOperator();
+
+    const expression = `${operand1} ${operator} ${operand2}`;
     let result = 0;
 
     switch (operator) {
       case '+':
-        result = parseInt(num1, 10) + parseInt(num2, 10);
+        result = operand1 + operand2;
         break;
       case '-':
-        result = parseInt(num1, 10) - parseInt(num2, 10);
+        result = operand1 - operand2;
         break;
       case '*':
-        result = parseInt(num1, 10) * parseInt(num2, 10);
+        result = operand1 * operand2;
         break;
       case '/':
-        result = parseInt(num1, 10) / parseInt(num2, 10);
+        result = operand1 / operand2;
         break;
       default:
         result = null;
         break;
     }
-    return result;
+    return [expression, result.toString()];
   };
 
-  const q1 = `${rand(100)} + ${rand(100)}`;
-  const q2 = `${rand(100)} - ${rand(100)}`;
-  const q3 = `${rand(100)} * ${rand(100)}`;
-
-  const a1 = getExprResult(q1).toString();
-  const a2 = getExprResult(q2).toString();
-  const a3 = getExprResult(q3).toString();
+  const challenges = [getChallenge(), getChallenge(), getChallenge()];
 
   const gameParams = {
     description: 'What is the result of the expression?',
-    questions: [q1, q2, q3],
-    answers: [a1, a2, a3],
+    challenges,
   };
 
   startGame(gameParams);
