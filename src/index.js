@@ -17,8 +17,9 @@ const startGame = (params) => {
 
   const { challenges } = params;
 
+  let fail = false;
   // eslint-disable-next-line prefer-const
-  for (let challenge of challenges) {
+  for (let challenge of challenges) { // don't know how to rewrite it yet
     const [question, answer] = challenge;
 
     console.log(`Question: ${question}`);
@@ -28,12 +29,14 @@ const startGame = (params) => {
     if (userAnswer !== answer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${name}!`);
+      fail = true;
       break;
     }
     console.log('Correct!');
   }
-
-  console.log(`Congratulations, ${name}!`);
+  if (!fail) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
 export { rand, startGame };
