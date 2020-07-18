@@ -10,18 +10,18 @@ export default () => {
     return num > 1;
   };
 
-  const q1 = rand(1000);
-  const q2 = rand(1000);
-  const q3 = rand(1000);
+  const getChallenge = () => {
+    const question = rand(100);
+    const answer = isPrime(question) ? 'yes' : 'no';
 
-  const a1 = isPrime(q1) ? 'yes' : 'no';
-  const a2 = isPrime(q2) ? 'yes' : 'no';
-  const a3 = isPrime(q3) ? 'yes' : 'no';
+    return [question, answer];
+  };
+
+  const challenges = [getChallenge(), getChallenge(), getChallenge()];
 
   const gameParams = {
     description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    questions: [q1, q2, q3],
-    answers: [a1, a2, a3],
+    challenges,
   };
 
   startGame(gameParams);
