@@ -1,9 +1,10 @@
-import { rand, startGame } from '../index.js';
+import startGame from '../index.js';
+import { generateNumber } from '../utils.js';
 
 const getChallenge = () => {
   const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-  const question = rand(100);
+  const question = generateNumber();
   const answer = isEven(question);
 
   return [question, answer];

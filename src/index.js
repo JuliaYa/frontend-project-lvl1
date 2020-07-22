@@ -1,11 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 
-const rand = (maxLimit = 100) => {
-  const randomNumber = Math.random() * maxLimit;
-  return Math.floor(randomNumber);
-};
-
 const startGame = (params) => {
   console.log('Welcome to the Brain Games!');
 
@@ -39,4 +34,4 @@ const startGame = (params) => {
   }
 };
 
-export { rand, startGame };
+export default startGame;

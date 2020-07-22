@@ -1,4 +1,5 @@
-import { rand, startGame } from '../index.js';
+import startGame from '../index.js';
+import { generateNumber } from '../utils.js';
 
 export default () => {
   const isPrime = (num) => {
@@ -11,7 +12,7 @@ export default () => {
   };
 
   const getChallenge = () => {
-    const question = rand(100);
+    const question = generateNumber();
     const answer = isPrime(question) ? 'yes' : 'no';
 
     return [question, answer];

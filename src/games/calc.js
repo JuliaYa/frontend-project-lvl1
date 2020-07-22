@@ -1,4 +1,5 @@
-import { rand, startGame } from '../index.js';
+import startGame from '../index.js';
+import { generateNumber } from '../utils.js';
 
 export default () => {
   const getRandomOperator = () => {
@@ -8,8 +9,8 @@ export default () => {
   };
 
   const getChallenge = () => {
-    const operand1 = rand(100);
-    const operand2 = rand(100);
+    const operand1 = generateNumber();
+    const operand2 = generateNumber();
     const operator = getRandomOperator();
 
     const expression = `${operand1} ${operator} ${operand2}`;

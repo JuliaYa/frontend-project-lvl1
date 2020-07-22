@@ -1,4 +1,5 @@
-import { rand, startGame } from '../index.js';
+import startGame from '../index.js';
+import { generateNumber } from '../utils.js';
 
 const findGCD = (num1, num2) => {
   let temp;
@@ -14,8 +15,8 @@ const findGCD = (num1, num2) => {
 };
 
 const getChallenge = () => {
-  const number1 = rand(100);
-  const number2 = rand(100);
+  const number1 = generateNumber();
+  const number2 = generateNumber();
 
   return [`${number1} ${number2}`, findGCD(number1, number2).toString()];
 };

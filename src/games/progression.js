@@ -1,4 +1,5 @@
-import { rand, startGame } from '../index.js';
+import startGame from '../index.js';
+import { generateNumber } from '../utils.js';
 
 const getProgression = (start, interval, count = 10) => {
   const progression = [start];
@@ -12,8 +13,8 @@ const getProgression = (start, interval, count = 10) => {
 
 const getChallenge = () => {
   const progressionSize = 10;
-  const progression = getProgression(rand(100), rand(100), progressionSize);
-  const hiddenIndex = rand(progressionSize);
+  const progression = getProgression(generateNumber(), generateNumber(), progressionSize);
+  const hiddenIndex = generateNumber(0, progressionSize);
   const answer = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
 
