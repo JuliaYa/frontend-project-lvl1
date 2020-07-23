@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
 const getProgression = (start, interval, count = 10) => {
@@ -11,7 +11,7 @@ const getProgression = (start, interval, count = 10) => {
   return progression;
 };
 
-const getChallenge = () => {
+const generateRound = () => {
   const progressionSize = 10;
   const progression = getProgression(generateNumber(), generateNumber(), progressionSize);
   const hiddenIndex = generateNumber(0, progressionSize);
@@ -22,12 +22,9 @@ const getChallenge = () => {
 };
 
 export default () => {
-  const challenges = [getChallenge(), getChallenge(), getChallenge()];
+  const description = 'What number is missing in the progression?';
 
-  const gameParams = {
-    description: 'What number is missing in the progression?',
-    challenges,
-  };
+  const rounds = Array.from(Array(getNumberOfRounds), () => generateRound());
 
-  startGame(gameParams);
+  startGame(description, rounds);
 };

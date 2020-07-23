@@ -1,29 +1,26 @@
-import startGame from '../index.js';
+import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
-export default () => {
-  const isPrime = (num) => {
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) {
-        return false;
-      }
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
-    return num > 1;
-  };
+  }
+  return num > 1;
+};
 
-  const getChallenge = () => {
-    const question = generateNumber();
-    const answer = isPrime(question) ? 'yes' : 'no';
+const generateRound = () => {
+  const question = generateNumber();
+  const answer = isPrime(question) ? 'yes' : 'no';
 
-    return [question, answer];
-  };
+  return [question, answer];
+};
 
-  const challenges = [getChallenge(), getChallenge(), getChallenge()];
+export default () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const gameParams = {
-    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    challenges,
-  };
+  const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
-  startGame(gameParams);
+  startGame(description, rounds);
 };

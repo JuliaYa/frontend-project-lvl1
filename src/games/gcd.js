@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
 const findGCD = (num1, num2) => {
@@ -14,7 +14,7 @@ const findGCD = (num1, num2) => {
   return a;
 };
 
-const getChallenge = () => {
+const generateRound = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
 
@@ -22,12 +22,9 @@ const getChallenge = () => {
 };
 
 export default () => {
-  const challenges = [getChallenge(), getChallenge(), getChallenge()];
+  const description = 'Find the greatest common divisor of given numbers.';
 
-  const gameParams = {
-    description: 'Find the greatest common divisor of given numbers.',
-    challenges,
-  };
+  const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
-  startGame(gameParams);
+  startGame(description, rounds);
 };
