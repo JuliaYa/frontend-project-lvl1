@@ -1,11 +1,11 @@
 import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
-const generateRound = () => {
-  const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
+const isEven = (number) => number % 2 === 0;
 
+const generateRound = () => {
   const question = generateNumber();
-  const answer = isEven(question);
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return [question, answer];
 };

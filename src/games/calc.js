@@ -7,28 +7,27 @@ const getRandomOperator = () => {
   return operators[Math.floor(Math.random() * operators.length)];
 };
 
+const calculate = (operand1, operand2, operator) => {
+  switch (operator) {
+    case '+':
+      return operand1 + operand2;
+    case '-':
+      return operand1 - operand2;
+    case '*':
+      return operand1 * operand2;
+    default:
+      throw new Error(`Unknown operator - ${operator}`);
+  }
+};
+
 const generateRound = () => {
   const operand1 = generateNumber();
   const operand2 = generateNumber();
   const operator = getRandomOperator();
 
   const expression = `${operand1} ${operator} ${operand2}`;
-  let result = 0;
+  const result = calculate(operand1, operand2, operator);
 
-  switch (operator) {
-    case '+':
-      result = operand1 + operand2;
-      break;
-    case '-':
-      result = operand1 - operand2;
-      break;
-    case '*':
-      result = operand1 * operand2;
-      break;
-    default:
-      result = null;
-      break;
-  }
   return [expression, result.toString()];
 };
 
