@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import startGame from '../engine.js';
 import { generateNumber } from '../utils.js';
 
 const description = 'What number is missing in the progression?';

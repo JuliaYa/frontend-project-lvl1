@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// TODO: rename file
-
 const numberOfRounds = 3;
 
 export default (description, nextRound) => {
