@@ -1,13 +1,10 @@
-/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
+
+// TODO: rename file
 
 const numberOfRounds = 3;
 
-const getNumberOfRounds = () => numberOfRounds;
-
-export { getNumberOfRounds };
-
-export default (description, rounds) => {
+export default (description, nextRound) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
@@ -16,9 +13,10 @@ export default (description, rounds) => {
 
   console.log(description);
 
-  // eslint-disable-next-line prefer-const
-  for (let round of rounds) { // don't know how to rewrite it yet
-    const [question, answer] = round;
+  let round = 1;
+
+  while (round <= numberOfRounds) {
+    const [question, answer] = nextRound();
 
     console.log(`Question: ${question}`);
 
@@ -29,6 +27,7 @@ export default (description, rounds) => {
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    round += 1;
     console.log('Correct!');
   }
 

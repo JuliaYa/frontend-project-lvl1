@@ -1,4 +1,4 @@
-import startGame, { getNumberOfRounds } from '../index.js';
+import startGame from '../index.js';
 import { generateNumber } from '../utils.js';
 
 const description = 'What is the result of the expression?';
@@ -34,7 +34,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
-
-  startGame(description, rounds);
+  startGame(description, generateRound);
 };

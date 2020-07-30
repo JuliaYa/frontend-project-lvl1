@@ -1,4 +1,4 @@
-import startGame, { getNumberOfRounds } from '../index.js';
+import startGame from '../index.js';
 import { generateNumber } from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -12,7 +12,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
-
-  startGame(description, rounds);
+  startGame(description, generateRound);
 };
