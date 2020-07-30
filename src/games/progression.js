@@ -1,6 +1,7 @@
 import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
+const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const getProgression = () => {
@@ -26,8 +27,6 @@ const generateRound = () => {
 };
 
 export default () => {
-  const description = 'What number is missing in the progression?';
-
   const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
   startGame(description, rounds);

@@ -1,6 +1,8 @@
 import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 const findGCD = (num1, num2) => {
   let temp;
   let a = num1;
@@ -22,8 +24,6 @@ const generateRound = () => {
 };
 
 export default () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-
   const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
   startGame(description, rounds);

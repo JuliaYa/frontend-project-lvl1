@@ -1,6 +1,8 @@
 import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
+const description = 'What is the result of the expression?';
+
 const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
 
@@ -32,7 +34,6 @@ const generateRound = () => {
 };
 
 export default () => {
-  const description = 'What is the result of the expression?';
   const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
   startGame(description, rounds);

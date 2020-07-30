@@ -1,6 +1,8 @@
 import startGame, { getNumberOfRounds } from '../index.js';
 import { generateNumber } from '../utils.js';
 
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (num) => {
   if (num < 2) {
     return false;
@@ -21,8 +23,6 @@ const generateRound = () => {
 };
 
 export default () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
   const rounds = Array.from(Array(getNumberOfRounds()), () => generateRound());
 
   startGame(description, rounds);
