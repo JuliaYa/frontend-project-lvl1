@@ -1,4 +1,4 @@
-### Brain Games
+# Brain Games
 
 ![CI](https://github.com/JuliaYa/frontend-project-lvl1/workflows/CI/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/18389b4e26149e6cec8b/maintainability)](https://codeclimate.com/github/JuliaYa/frontend-project-lvl1/maintainability)
@@ -26,26 +26,26 @@ Correct!
 Congratulations, Sam!
 ```
 
-# Installation
+## Installation
 
 ```console
-make install
+$ make install
 ```
 Запуск любой игры
 ```console
-make brain-even
+$ make brain-even
 ```
 
-# Локальная установка пакета
+### Локальная установка пакета
 
 Из деректории проекта 
 ```console
-make publish
-npm link 
+$ make publish
+$ npm link 
 ```
 После установки игры можно запускать по имени.
 
-## Пример
+### Пример
 ```console
 $ brain-prime
 ```
