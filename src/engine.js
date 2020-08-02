@@ -1,8 +1,22 @@
 import readlineSync from 'readline-sync';
 
-const numberOfRounds = 3;
+export const ROUNDS_COUNT = 3;
+
+/**
+ *
+ * @param {Function} nextRound
+ */
+const generateRounds = (nextRound) => {
+  const rounds = [];
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+    rounds.push(nextRound());
+  }
+  return rounds;
+};
 
 export default (description, nextRound) => {
+  const rounds = generateRounds(nextRound);
+
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
@@ -11,11 +25,8 @@ export default (description, nextRound) => {
 
   console.log(description);
 
-  let round = 1;
-
-  while (round <= numberOfRounds) {
-    const [question, answer] = nextRound();
-
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [question, answer] of rounds) {
     console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
@@ -25,7 +36,6 @@ export default (description, nextRound) => {
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    round += 1;
     console.log('Correct!');
   }
 

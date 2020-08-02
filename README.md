@@ -26,7 +26,7 @@ Correct!
 Congratulations, Sam!
 ```
 
-## Installation
+# Installation
 
 ```console
 $ make install
@@ -36,7 +36,7 @@ $ make install
 $ make brain-even
 ```
 
-### Локальная установка пакета
+## Локальная установка пакета
 
 Из деректории проекта 
 ```console
@@ -45,7 +45,7 @@ $ npm link
 ```
 После установки игры можно запускать по имени.
 
-### Пример
+## Пример
 ```console
 $ brain-prime
 ```

@@ -1,4 +1,12 @@
-const generateNumber = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+/**
+ *
+ * @param {Number} min
+ * @param {Number} max
+ */
 
-// eslint-disable-next-line import/prefer-default-export
-export { generateNumber };
+const generateRundomInt = (min = 0, max = 100) => {
+  const num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+};
+
+export default generateRundomInt;

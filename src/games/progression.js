@@ -1,31 +1,39 @@
 import startGame from '../engine.js';
-import { generateNumber } from '../utils.js';
+import generateRundomInt from '../utils.js';
 
-const description = 'What number is missing in the progression?';
-const progressionLength = 10;
+const DESCRIPTION = 'What number is missing in the progression?';
+const PROGRESSION_LENGTH = 10;
 
-const getProgression = () => {
+/**
+ *
+ * @param {Number} startNum
+ * @param {Numer} diff
+ */
+
+const generateProgression = (startNum, diff) => {
   const progression = [];
-  const step = generateNumber();
 
-  progression.push(generateNumber());
-  for (let i = 1; i < progressionLength; i += 1) {
-    progression.push(progression[i - 1] + step);
+  for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
+    progression.push(startNum + diff * i);
   }
+
   return progression;
 };
 
+/**
+ * @reterns {[String, String]}
+ */
+
 const generateRound = () => {
-  /* мне кажется что скрытый индекс в генерацию прогрессии добавлять не стот */
-  const progression = getProgression();
+  const progression = generateProgression(generateRundomInt(), generateRundomInt());
 
-  const hiddenIndex = generateNumber(0, progressionLength);
+  const hiddenIndex = generateRundomInt(0, PROGRESSION_LENGTH - 1);
   const answer = progression[hiddenIndex];
-  progression[hiddenIndex] = '..';
+  const question = progression.map((element, index) => (index === hiddenIndex ? '..' : element)).join(' ');
 
-  return [progression.join(' '), answer.toString()];
+  return [question, String(answer)];
 };
 
 export default () => {
-  startGame(description, generateRound);
+  startGame(DESCRIPTION, generateRound);
 };
