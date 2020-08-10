@@ -1,4 +1,4 @@
-import startGame from '../engine.js';
+import runGame from '../engine.js';
 import generateRundomInt from '../utils.js';
 
 const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -13,5 +13,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  startGame(DESCRIPTION, generateRound);
+  runGame(DESCRIPTION, generateRound);
 };

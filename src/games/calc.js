@@ -1,4 +1,4 @@
-import startGame from '../engine.js';
+import runGame from '../engine.js';
 import generateRundomInt from '../utils.js';
 
 const DESCRIPTION = 'What is the result of the expression?';
@@ -22,12 +22,12 @@ const generateRound = () => {
   const operand2 = generateRundomInt();
   const operator = OPERATORS[generateRundomInt(0, 2)];
 
-  const expression = `${operand1} ${operator} ${operand2}`;
-  const result = calculate(operand1, operand2, operator);
+  const question = `${operand1} ${operator} ${operand2}`;
+  const answer = String(calculate(operand1, operand2, operator));
 
-  return [expression, String(result)];
+  return [question, answer];
 };
 
 export default () => {
-  startGame(DESCRIPTION, generateRound);
+  runGame(DESCRIPTION, generateRound);
 };

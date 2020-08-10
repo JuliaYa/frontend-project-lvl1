@@ -1,4 +1,4 @@
-import startGame from '../engine.js';
+import runGame from '../engine.js';
 import generateRundomInt from '../utils.js';
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
@@ -26,10 +26,12 @@ const generateRound = () => {
   const number1 = generateRundomInt();
   const number2 = generateRundomInt();
 
-  const gcd = findGCD(number1, number2);
-  return [`${number1} ${number2}`, String(gcd)];
+  const question = `${number1} ${number2}`;
+  const answer = String(findGCD(number1, number2));
+
+  return [question, answer];
 };
 
 export default () => {
-  startGame(DESCRIPTION, generateRound);
+  runGame(DESCRIPTION, generateRound);
 };
